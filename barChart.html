@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Stacked Bar Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="barChart.js" defer></script>
+    <script src="sidenav.js" defer></script>
+
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <h1>Stacked Bar Chart</h1>
+        <div class="map-buttons">
+            <button id="OECDEuropeButton">OECD Europe</button>
+            <button id="OECDAsiaButton">OECD Asia</button>
+            <button id="OECDEurasiaButton">Other Eurasia</button>
+            <button id="OtherEuropeButton">Other Europe</button>
+        </div>
+    </div>
+    <!-- Chart -->
+    <div id="chart-container"></div>
+    <div class="oecd-form">
+        <h2>OECD Countries</h2>
+        <form>
+            <ul>
+                <h3>OECD Europe</h3>
+                <li>Luxembourg</li>
+                <li>Switzerland</li>
+                <li>Netherlands</li>
+                <li>France</li>
+                <li>Germany</li>
+                <h3>OECD Asia</h3>
+                <li>Japan</li>
+                <li>South Korea</li>
+                <h3>Other Eurasia</h3>
+                <li>Armenia</li>
+                <li>Azerbaijan</li>
+                <li>Turkey</li>
+                <li>Kazakhstan</li>
+            </ul>
+        </form>
+    </div>
+
+    <div class="plastic-type">
+        <h2>Plastic Type</h2>
+        <button id="Total">Total</button>
+        <button id="Microplastics">Microplastics</button>
+        <button id="Macroplastics">Macroplastics</button>
+    </div>
+
+    <div class="visualisation-buttons">
+        <a href="map.html">
+            <button id="mapButton">Map</button>
+        </a>
+        <a href="lineChart.html">
+            <button id="lineChartButton">Line Chart</button>
+        </a>
+        <a href="barChart.html">
+            <button id="barChartButton">Stacked Bar Chart</button>
+        </a>
+        <a href="pieChart.html">
+            <button id="pieChartButton">Pie Chart</button>
+        </a>
+    </div>
+
+    <div id="container">
+        <!-- Key Takeaways -->
+        <div  class="takeaways">
+            <h2>Key Takeaways</h2>
+            <p>The stacked bar chart clearly shows the different amount of microplastic and macroplastic leaks over time. It emphasises that a greater portion of all plastic leaks is currently caused by macroplastics. However, the consistent rise of microplastics shows that they may become a more serious concern in the future.
+            </p>
+            <h3>Graph Justification:</h3>
+            <ul>
+                <li>Stacked bar charts are ideal for comparing different categories, such as microplastics and macroplastics, throughout time periods.</li>
+                <li>The stacked structure efficiently highlights total plastic leakage while also splitting it down into each of its parts, offering insights into both the overall trend and individual contributions.</li>
+                <li>The different bar heights highlight changes in magnitude between years and categories, making it simple to discover growth trends and potential abnormalities.</li>
+            </ul>
+        </div>
+    </div> 
+
+    <!-- Footer -->
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+
+</body>
+</html>

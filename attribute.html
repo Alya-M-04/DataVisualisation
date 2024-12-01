@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Attribute</title>
+    <script src="sidenav.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="header">
+        <h1>Attribute</h1>
+    </div>
+    <!-- Attribute Form -->
+    <div class="attribute-form">
+        <h1>Attribute to Author</h1>
+        <p>Icon by <a href="https://www.flaticon.com/free-icons/sidebar" title="navigation icons" target="_blank">Navigation icons created by O.moonstd - Flaticon</a></p>
+        <p><a href="https://blog.hubspot.com/website/css-animation-examples" title="navigation icons" target="_blank">Growing/Shrinking Bars</a></p>
+        <p><a href="https://www.codewithrandom.com/2023/10/30/animated-scroll-down-arrows-css/" title="navigation icons" target="_blank">Scroll down Arrow Code by Wojtek Tymicki</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+</body>
+</html>

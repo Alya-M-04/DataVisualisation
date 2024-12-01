@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Plastic Leakage to the Environment by Region</title>
+    <script src="homepage.js" defer></script>
+    <script src="sidenav.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+    <!-- Main Content Section -->
+    <div class="title-section">
+        <h1>Tracking the Leak: <br> Data-Driven Exploration of <br> Regional Plastic Pollution</h1>
+        <h2>Brought to you by:</h2>
+        <h2>Fitrie & Alya</h2>
+        <h3>Go To Background and Motivation!</h3>
+        <!-- Scroll Down Button Section -->
+        <div class="scroll-button-container">
+            <div class="arrow-down" id="scrollDownArrow1">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gapSection"></div>
+
+    <!-- Background Section -->
+    <form class="form-section" id="backgroundForm">
+        <h2>Background and Motivation</h2>
+        <p>
+            This visualisation on plastic leakage by region is designed for researchers, students, and environmentally conscious individuals. It provides valuable data for studying plastic pollution trends, comparing regions, and tracking changes over time, aiding in research and policy recommendations. For the general public, it offers an educational tool to better understand global plastic waste challenges, raising awareness and supporting sustainability efforts.
+        </p>
+    </form>
+    <div class="plasticleak-img">
+        <img src="plastic_leakage.jpeg" alt="Plastic Leakage" />
+    </div>   
+    <h3>Go To Visualisation Purpose!</h3>
+        <!-- Scroll Down Button Section 2 -->
+    <div class="scroll-button-container">
+        <div class="arrow-down" id="scrollDownArrow2">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div> 
+
+    <div id="gapSection"></div>
+    <div class="logo-holder">
+        <div class="logo-bar"></div>
+        <div class="logo-bar fill1"></div>
+        <div class="logo-bar fill2"></div>
+        <div class="logo-bar fill3"></div>
+        <div class="logo-bar fill4"></div>
+        <div class="logo-bar fill1"></div>
+        <div class="logo-bar fill5"></div>
+        <div class="logo-bar fill6"></div>
+        <div class="logo-bar"></div>
+    </div>
+    <!-- Visualisation Purpose Section -->
+    <form class="form-section" id="visualisationPurposeForm">
+        <h2>Visualisation Purpose</h2>
+        <p>
+            The purpose of this visualisation is to provide insights into plastic leakage trends across regions, helping users understand the environmental impact of plastic waste. It answers key questions such as which regions experience the highest levels of plastic leakage, how trends have changed over time, and the types of plastics contributing most to pollution. It also highlights regions showing improvement in managing leakage, compares leakage levels across regions, and projects future trends.
+        </p>
+    </form>
+
+    <button id="goBackUpButton" style="display: none;">&#11165;</button>
+
+    <div class="goto-btn-container">
+        <button id="visualisationsButton" onclick="window.location.href='map.html'">Go to Visualisations</button>
+    </div>
+
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Map</title>
+    <script src="map.js" defer></script> 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="sidenav.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+      
+    <!-- Map Section -->
+    <div class="map-section">
+        <h1>Map</h1>
+        <!-- Buttons -->
+        <div class="map-buttons">
+            <button id="AllCountriesButton">All OECD Countries</button>
+            <button id="OECDEuropeButton">OECD Europe</button>
+            <button id="OECDAsiaButton">OECD Asia</button>
+            <button id="OECDEurasiaButton">OECD Eurasia</button>
+        </div>
+
+        <!-- Map and Filters -->
+        <div class="map-and-filters">
+            <!-- Map -->
+            <div class="map-container">
+                <!-- The map will be rendered here -->
+            </div>     
+        </div>
+
+        <!-- OECD Countries Form -->
+        <div class="oecd-form">
+            <h2>OECD Countries</h2>
+            <form>
+                <ul>
+                    <h3>OECD Europe</h3>
+                    <li>Luxembourg</li>
+                    <li>Switzerland</li>
+                    <li>Netherlands</li>
+                    <li>France</li>
+                    <li>Germany</li>
+                    <h3>OECD Asia</h3>
+                    <li>Japan</li>
+                    <li>South Korea</li>
+                    <h3>Other Eurasia</h3>
+                    <li>Armenia</li>
+                    <li>Azerbaijan</li>
+                    <li>Turkey</li>
+                    <li>Kazakhstan</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <div class="controls">
+        <h3 class="filter-heading">Year Filter</h3>
+        <select id="yearFilter">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+        </select>
+    </div>
+
+    <div class="visualisation-buttons">
+        <a href="map.html">
+            <button id="mapButton">Map</button>
+        </a>
+        <a href="lineChart.html">
+            <button id="lineChartButton">Line Chart</button>
+        </a>
+        <a href="barChart.html">
+            <button id="barChartButton">Stacked Bar Chart</button>
+        </a>
+        <a href="pieChart.html">
+            <button id="pieChartButton">Pie Chart</button>
+        </a>
+    </div>
+
+    <div id="container">
+        <!-- Plastic Info -->
+        <div id="plasticInfo">
+            <h2>All OECD Countries</h2>
+            <p><strong>Total Plastics:</strong> <span id="OECDTotalPlastics">N/A</span></p>
+    
+            <h2>OECD Europe</h2>
+            <p><strong>Total Plastics:</strong> <span id="OECD_EUTotalPlastics">N/A</span></p>
+            <p><strong>Microplastics:</strong> <span id="OECD_EUMicroplastics">N/A</span></p>
+            <p><strong>Macroplastics:</strong> <span id="OECD_EUMacroplastics">N/A</span></p>
+    
+            <h2>OECD Asia</h2>
+            <p><strong>Total Plastics:</strong> <span id="OECD_AsiaTotalPlastics">N/A</span></p>
+            <p><strong>Microplastics:</strong> <span id="OECD_AsiaMicroplastics">N/A</span></p>
+            <p><strong>Macroplastics:</strong> <span id="OECD_AsiaMacroplastics">N/A</span></p>
+    
+            <h2>OECD Eurasia</h2>
+            <p><strong>Total Plastics:</strong> <span id="OECD_EurasiaTotalPlastics">N/A</span></p>
+            <p><strong>Microplastics:</strong> <span id="OECD_EurasiaMicroplastics">N/A</span></p>
+            <p><strong>Macroplastics:</strong> <span id="OECD_EurasiaMacroplastics">N/A</span></p>
+        </div>
+    
+        <!-- Key Takeaways -->
+        <div id="keyTakeaways">
+            <h2>Key Takeaways</h2>
+            <p>The map visualisation offers a strong, user-friendly method of examining plastic leakage statistics across different OECD regions, revealing differences in plastic waste trends by region. Users may easily compare the amount and type of waste in each region by seeing the distribution of microplastics and macroplastics across regions like OECD Europe, OECD Asia, and OECD Eurasia. This enables greater understanding. In addition to being a useful tool for communication, the map gives stakeholders an opportunity to track differences in locations and trends over time.
+            </p>
+            <h3>Graph Justification:</h3>
+            <ul>
+                <li>Geographic Clarity: By presenting complicated facts in a visually engaging way, the map helps the identification of geographical differences.</li>
+                <li>Data Simplification: Large datasets may be presented more easily using the map format, especially to non-technical audiences.</li>
+                <li>Regional Comparisons: Comparing plastic leakage across locations is simple for users.</li>
+                <li>Dynamic Insights: By enabling users to monitor trends over time, the year filter improves the map's efficiency.</li>
+                <li>Targeted Actions: Helpful in identifying places with greater concentrations of certain plastic kinds, allowing for more focused waste reduction activities.</li>
+            </ul>
+        </div>
+    </div>  
+
+    <!-- Footer -->
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+</body>
+</html>

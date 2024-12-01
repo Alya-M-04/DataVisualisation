@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>About</title>
+    <script src="sidenav.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="header">
+        <h1>About</h1>
+    </div>
+    <section id="about">
+        <h2>Group - Data Visualisation Project</h2>
+        <p>For the Data Visualisation Project, our team has applied a structured, iterative design process to research, design, and build an interactive data visualisation, displayed on a website.</p>
+        <p>We used a dataset from the OECD Environment Statistics to provide meaningful insights on environmental challenges.</p>
+
+        <h3>GitHub Repository</h3>
+        <p>Check out our project on GitHub: <a href="https://github.com/ukiyowo/DataVisualization.git" target="_blank">Data Visualisation GitHub</a></p>
+
+        <h3>Data Source</h3>
+        <p>Dataset used: <a href="https://data-explorer.oecd.org/vis?tenant=archive&df[ds]=DisseminateArchiveDMZ&df[id]=DF_PLASTIC_LEAKAGE_V2_1&df[ag]=OECD&dq=TOTAL%2BMICROPLASTICS%2BMACROPLASTICS.&pd=2024%2C2029&to[TIME_PERIOD]=false&vw=sb" target="_blank">OECD Plastic Leakage to the Environment by Region</a></p>
+        
+        <h3>Cleaned Dataset</h3>
+        <p>The cleaned dataset can be accessed here: 
+            <a href="Cleaned OECD Plastics 2019-2029.csv" download>Cleaned OECD Plastics 2019-2029.csv</a>
+        </p>
+
+        <h3>GeoJSON Files</h3>
+        <p>To generate the GeoJSON files for the OECD regions, we downloaded individual country maps from <a href="https://cartographyvectors.com/" target="_blank">Cartography Vectors</a>. These maps were then combined using <a href="https://geojson.io/#map=2/0/20" target="_blank">GeoJSON.io</a> and saved as GeoJSON files.</p>
+        <p>We created four separate GeoJSON files because large files can slow down the loading time of the website. Splitting the data into smaller chunks improves the performance and ensures faster load times, especially for users with slower internet connections or devices with limited processing power.</p>
+    </section>
+
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+</body>
+</html>

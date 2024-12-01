@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Data Visualisation">
+    <meta name="keywords" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Pie Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="pieChart.js" defer></script>
+    <script src="sidenav.js" defer></script>
+</head>
+<body>
+    <!-- Sidebar Icon to Open the Sidenav -->
+    <div id="sidebarIcon" onclick="toggleSidenav()">
+        <img src="sidebar.png" alt="Sidebar Icon" width="40px" height="40px">
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidenav()">&times;</a>
+        <a href="homepage.html">Homepage</a>
+
+        <!-- Visualisations Dropdown -->
+        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown()">Visualisations &#11166;</a>
+        <div class="dropdown-container">
+            <a href="map.html">Map</a>
+            <a href="lineChart.html">Line Chart</a>
+            <a href="barChart.html">Stacked Bar Chart</a>
+            <a href="pieChart.html">Pie Chart</a>
+        </div>
+
+        <a href="attribute.html">Attribute</a>
+        <a href="profile.html">Profile</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Pie Chart Section -->
+    <div class="map-section">
+        <h1>Pie Chart</h1>
+        <div class="map-buttons">
+            <button id="OECDEuropeButton">OECD Europe</button>
+            <button id="OECDAsiaButton">OECD Asia</button>
+            <button id="OECDEurasiaButton">Other Eurasia</button>
+            <button id="OtherEuropeButton">Other Europe</button>
+        </div>
+    </div>
+
+    <!-- Pie Chart Container -->
+    <div id="pie-chart-container" style="margin-bottom: 30px;"></div> <!-- Added margin to separate it from the info container -->
+
+    <!-- Information Section for Microplastics and Macroplastics (below the pie chart) -->
+    <div id="plastic-info">
+        <!-- Data will be dynamically added here -->
+    </div>
+
+    <div class="oecd-form">
+        <h2>OECD Countries</h2>
+        <form>
+            <ul>
+                <h3>OECD Europe</h3>
+                <li>Luxembourg</li>
+                <li>Switzerland</li>
+                <li>Netherlands</li>
+                <li>France</li>
+                <li>Germany</li>
+                <h3>OECD Asia</h3>
+                <li>Japan</li>
+                <li>South Korea</li>
+                <h3>Other Eurasia</h3>
+                <li>Armenia</li>
+                <li>Azerbaijan</li>
+                <li>Turkey</li>
+                <li>Kazakhstan</li>
+            </ul>
+        </form>
+    </div>
+
+    <!-- Visualization Buttons -->
+    <div class="visualisation-buttons">
+        <a href="map.html">
+            <button id="mapButton">Map</button>
+        </a>
+        <a href="lineChart.html">
+            <button id="lineChartButton">Line Chart</button>
+        </a>
+        <a href="barChart.html">
+            <button id="barChartButton">Stacked Bar Chart</button>
+        </a>
+        <a href="pieChart.html">
+            <button id="pieChartButton">Pie Chart</button>
+        </a>
+    </div>
+
+    <div id="container">
+        <!-- Key Takeaways -->
+        <div class="takeaways">
+            <h2>Key Takeaways</h2>
+            <p>The pie chart provides an easy-to-understand way to understand the distribution of plastic types by efficiently visualising the percentage of various plastic categories (such as microplastics and macroplastics) within a particular region and year. In addition to improving data exploration with interactive elements like tooltips, it enables users to quickly figure out which category makes up the majority of the overall plastic data.</p>
+            <h3>Graph Justification:</h3>
+            <ul>
+                <li>Clear Proportions: Makes data easier to interpret by showing how much of each type of plastic contributes to the total.</li>
+                <li>Interactivity: By offering more information when hovered over, tooltips improve user engagement.</li>
+                <li>Suitable for Small Categories: Perfect for showing small categories (Microplastics, Macroplastics).</li>
+                <li>Simplicity: Provides a user-friendly format that enables fast data exploration and interpretation.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        COS30045 Data Visualisation<br>
+        Team Members: Fitrie Binti Kadri (101235447) & Alya Munirah Binti Sapawi (102778723)
+    </footer>
+</body>
+</html>
